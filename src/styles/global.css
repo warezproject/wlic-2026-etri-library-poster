@@ -36,6 +36,12 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (min-width: 480px) {
+  html {
+    font-size: 17px;
+  }
+}
+
 body {
   font-family: var(--font-sans);
   color: var(--color-text);
@@ -61,13 +67,12 @@ a {
   color: var(--color-accent);
 }
 
+a:hover {
+  opacity: 0.8;
+}
+
 img {
   max-width: 100%;
   display: block;
 }
 
-main {
-  padding: var(--space-8) var(--space-3);
-  max-width: 800px;
-  margin: 0 auto;
-}
