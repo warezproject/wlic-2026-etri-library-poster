@@ -3,10 +3,10 @@ import { lessons } from '../data/lessons';
 ---
 <section class="lessons">
   <div class="lessons-inner">
-    <h2>Lessons for libraries</h2>
+    <h2 data-animate>Lessons for libraries</h2>
     <ol class="lessons-list" role="list">
       {lessons.map((lesson) => (
-        <li class="lesson-item">
+        <li class="lesson-item" data-animate>
           <span class="lesson-number">{lesson.number}</span>
           <div>
             <strong>{lesson.headline}</strong>

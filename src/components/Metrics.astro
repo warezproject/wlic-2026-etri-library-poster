@@ -3,10 +3,10 @@ import { metrics } from '../data/metrics';
 ---
 <section class="metrics">
   <div class="metrics-inner">
-    <h2>Impact at a glance</h2>
+    <h2 data-animate>Impact at a glance</h2>
     <div class="metrics-grid">
       {metrics.map((m) => (
-        <div class="metric-card">
+        <div class="metric-card" data-animate>
           <span class="metric-value">{m.value}</span>
           <span class="metric-label">{m.label}</span>
           <span class="metric-sublabel">{m.sublabel}</span>

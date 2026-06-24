@@ -9,7 +9,7 @@ interface Props {
 
 const { case: c, theme } = Astro.props;
 ---
-<div class="case-card" style={`--theme-color: var(${theme.colorVar})`}>
+<div class="case-card" data-animate style={`--theme-color: var(${theme.colorVar})`}>
   <div class="case-header">
     <span class="case-icon">{c.icon}</span>
     <span class="case-theme">{theme.title}</span>

@@ -5,7 +5,7 @@ import CaseCard from './CaseCard.astro';
 ---
 <section class="cases">
   <div class="cases-inner">
-    <h2>Six cases in practice</h2>
+    <h2 data-animate>Six cases in practice</h2>
     <div class="cases-grid">
       {cases.map((c) => {
         const theme = themes.find((t) => t.id === c.themeId)!;
