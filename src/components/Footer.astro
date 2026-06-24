@@ -1,0 +1,55 @@
+---
+import { siteConfig } from '../data/siteConfig';
+---
+<footer class="footer">
+  <div class="footer-inner">
+    <p class="footer-authors">{siteConfig.authors}</p>
+    <p class="footer-org">{siteConfig.organization} · {siteConfig.orgFull}</p>
+    <p class="footer-country">{siteConfig.country}</p>
+    <a class="footer-email" href={`mailto:${siteConfig.contactEmail}`}>
+      {siteConfig.contactEmail}
+    </a>
+    <p class="footer-conf">{siteConfig.conference}</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-bg-dark);
+    color: rgba(255, 255, 255, 0.7);
+    padding: var(--space-8) var(--space-3);
+  }
+
+  .footer-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .footer-authors {
+    font-weight: 600;
+    color: #ffffff;
+    max-width: none;
+  }
+
+  .footer-org,
+  .footer-country,
+  .footer-conf {
+    font-size: 0.875rem;
+    max-width: none;
+  }
+
+  .footer-email {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: var(--space-2);
+  }
+
+  .footer-conf {
+    margin-top: var(--space-2);
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+</style>

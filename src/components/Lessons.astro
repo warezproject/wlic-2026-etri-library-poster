@@ -1,0 +1,72 @@
+---
+import { lessons } from '../data/lessons';
+---
+<section class="lessons">
+  <div class="lessons-inner">
+    <h2>Lessons for libraries</h2>
+    <ol class="lessons-list">
+      {lessons.map((lesson) => (
+        <li class="lesson-item">
+          <span class="lesson-number">{lesson.number}</span>
+          <div>
+            <strong>{lesson.headline}</strong>
+            <p>{lesson.body}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+  .lessons {
+    background: var(--color-bg-alt);
+    padding: var(--space-8) var(--space-3);
+  }
+
+  .lessons-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .lessons h2 {
+    margin-bottom: var(--space-4);
+  }
+
+  .lessons-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .lesson-item {
+    display: flex;
+    gap: var(--space-3);
+    align-items: flex-start;
+  }
+
+  .lesson-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    line-height: 1;
+    flex-shrink: 0;
+    min-width: 2.5rem;
+  }
+
+  .lesson-item strong {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+
+  .lesson-item p {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+</style>

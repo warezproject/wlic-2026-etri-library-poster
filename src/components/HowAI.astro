@@ -1,0 +1,82 @@
+---
+import { aiTools } from '../data/aiTools';
+---
+<section class="howai">
+  <div class="howai-inner">
+    <h2>How AI was used</h2>
+    <p class="howai-intro">
+      No exotic infrastructure. These are the tools and approaches ETRI Library applied across the six cases.
+    </p>
+    <ul class="howai-list">
+      {aiTools.map((tool) => (
+        <li class="howai-item">
+          <span class="howai-icon">{tool.icon}</span>
+          <div>
+            <strong>{tool.name}</strong>
+            <p>{tool.description}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .howai {
+    background: var(--color-bg-alt);
+    padding: var(--space-8) var(--space-3);
+  }
+
+  .howai-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .howai h2 {
+    margin-bottom: var(--space-2);
+  }
+
+  .howai-intro {
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-4);
+  }
+
+  .howai-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  @media (min-width: 600px) {
+    .howai-list {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .howai-item {
+    display: flex;
+    gap: var(--space-2);
+    align-items: flex-start;
+  }
+
+  .howai-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .howai-item strong {
+    display: block;
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    margin-bottom: 4px;
+  }
+
+  .howai-item p {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    max-width: none;
+  }
+</style>
