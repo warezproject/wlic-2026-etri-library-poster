@@ -1,0 +1,75 @@
+---
+import { metrics } from '../data/metrics';
+---
+<section class="metrics">
+  <div class="metrics-inner">
+    <h2>Impact at a glance</h2>
+    <div class="metrics-grid">
+      {metrics.map((m) => (
+        <div class="metric-card">
+          <span class="metric-value">{m.value}</span>
+          <span class="metric-label">{m.label}</span>
+          <span class="metric-sublabel">{m.sublabel}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .metrics {
+    background: var(--color-bg);
+    padding: var(--space-8) var(--space-3);
+  }
+
+  .metrics-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .metrics h2 {
+    margin-bottom: var(--space-4);
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+
+  .metric-card {
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: var(--space-3);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .metric-value {
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: 800;
+    color: var(--color-accent);
+    line-height: 1;
+  }
+
+  .metric-label {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .metric-sublabel {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+    max-width: none;
+  }
+
+  @media (max-width: 400px) {
+    .metrics-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
