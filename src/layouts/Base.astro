@@ -27,6 +27,23 @@ const {
   <body>
     <slot />
     <script>
+      // Prevent hash-based auto-scroll on page load
+      if (history.scrollRestoration) history.scrollRestoration = 'manual';
+      window.scrollTo(0, 0);
+
+      // Smooth scroll without writing hash to URL
+      document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener('click', (e) => {
+          const id = link.getAttribute('href').slice(1);
+          const target = document.getElementById(id);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+
+      // Scroll-triggered fade-in
       const observer = new IntersectionObserver(
         (entries) => {
           const visible = entries.filter((e) => e.isIntersecting);
