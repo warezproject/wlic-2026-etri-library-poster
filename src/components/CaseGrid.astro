@@ -1,0 +1,44 @@
+---
+import { cases } from '../data/cases';
+import { themes } from '../data/themes';
+import CaseCard from './CaseCard.astro';
+---
+<section class="cases">
+  <div class="cases-inner">
+    <h2>Six cases in practice</h2>
+    <div class="cases-grid">
+      {cases.map((c) => {
+        const theme = themes.find((t) => t.id === c.themeId)!;
+        return <CaseCard case={c} theme={theme} />;
+      })}
+    </div>
+  </div>
+</section>
+
+<style>
+  .cases {
+    background: var(--color-bg);
+    padding: var(--space-8) var(--space-3);
+  }
+
+  .cases-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .cases h2 {
+    margin-bottom: var(--space-4);
+  }
+
+  .cases-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  @media (min-width: 768px) {
+    .cases-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
