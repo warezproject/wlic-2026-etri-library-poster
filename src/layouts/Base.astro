@@ -53,7 +53,7 @@ const {
             observer.unobserve(entry.target);
           });
         },
-        { threshold: 0.05 }
+        { threshold: 0.08 }
       );
       document.querySelectorAll('[data-animate]').forEach((el) => {
         observer.observe(el);
