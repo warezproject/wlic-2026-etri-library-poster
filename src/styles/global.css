@@ -79,8 +79,8 @@ img {
 /* Scroll-triggered fade-in */
 [data-animate] {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
+  transform: translateY(20px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
 [data-animate].is-visible {

@@ -29,17 +29,16 @@ const {
     <script>
       const observer = new IntersectionObserver(
         (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              observer.unobserve(entry.target);
-            }
+          const visible = entries.filter((e) => e.isIntersecting);
+          visible.forEach((entry, i) => {
+            entry.target.style.transitionDelay = `${i * 50}ms`;
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
           });
         },
-        { threshold: 0.12 }
+        { threshold: 0.05 }
       );
-      document.querySelectorAll('[data-animate]').forEach((el, i) => {
-        el.style.transitionDelay = `${i * 80}ms`;
+      document.querySelectorAll('[data-animate]').forEach((el) => {
         observer.observe(el);
       });
     </script>
