@@ -80,7 +80,7 @@ img {
 [data-animate] {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.50s ease, transform 0.50s ease;
+  transition: opacity 0.55s ease, transform 0.55s ease;
 }
 
 [data-animate].is-visible {
